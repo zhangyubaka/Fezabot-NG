@@ -5,6 +5,7 @@ import telepot.aio
 from telepot.aio.loop import OrderedWebhook
 from pprint import pprint
 from plugins.contributions import getContribution
+from plugins.help import botHelp
 from config import TOKEN,PORT,URL
 
 global bot
@@ -32,6 +33,8 @@ async def handler(msg):
 			await bot.setMessage(msg['chat']['id'],'This is Feza Bot NG.')
 		elif msg['text'].startswith('/zici'):
 			pass
+		elif msg['text'].startswith('/help'):
+			await botHelp(bot,msg)
 	except KeyError as e:
 		pprint(e)
 
