@@ -8,6 +8,8 @@ from plugins.contributions import getContribution
 from plugins.help import botHelp
 from config import TOKEN,PORT,URL
 from plugins.trueRandom import trueInteger
+from plugins.dns import getdns
+
 
 global bot
 
@@ -38,6 +40,8 @@ async def handler(msg):
 			await botHelp(bot,msg)
 		elif msg['text'].startswith('/random'):
 			await trueInteger(bot,msg)
+		elif msg['text'].startswith('/lookup'):
+			await getdns(bot,msg)
 	except KeyError as e:
 		pprint(e)
 
