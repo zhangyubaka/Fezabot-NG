@@ -21,7 +21,7 @@ async def feeder(request): # Copy/Pasting code from telepot examples
     webhook.feed(data)
     return web.Response(body='OK'.encode('utf-8'))
 
-async def init(app, bot):
+async def init(app, bot): # Copy/Pasting code from telepot examples
     app.router.add_route('GET', '/webhook', feeder)
     app.router.add_route('POST', '/webhook', feeder)
 
@@ -44,7 +44,7 @@ async def handler(msg):
 			await trueInteger(bot,msg)
 		elif msg['text'].startswith('/lookup'):
 			await getdns(bot,msg)
-	except KeyError as e:
+	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
 
@@ -53,7 +53,7 @@ loop = asyncio.get_event_loop() # Get eventloop
 
 app = web.Application(loop=loop)
 bot = telepot.aio.Bot(TOKEN, loop=loop)
-webhook = OrderedWebhook(bot, {'chat': handler})
+webhook = OrderedWebhook(bot, {'chat': handler}) # Create Webhook here.
 
 loop.run_until_complete(init(app, bot))
 
