@@ -9,6 +9,7 @@ from plugins.help import botHelp
 from config import TOKEN,PORT,URL
 from plugins.trueRandom import trueInteger
 from plugins.dns import getdns
+import uvloop
 
 
 global bot
@@ -46,6 +47,7 @@ async def handler(msg):
 		pprint(e)
 
 
+asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 loop = asyncio.get_event_loop()
 
 app = web.Application(loop=loop)
