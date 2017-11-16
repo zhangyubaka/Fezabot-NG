@@ -7,6 +7,7 @@ from pprint import pprint
 from plugins.contributions import getContribution
 from plugins.help import botHelp
 from config import TOKEN,PORT,URL
+from plugins.trueRandom import trueInteger
 
 global bot
 
@@ -35,6 +36,8 @@ async def handler(msg):
 			pass
 		elif msg['text'].startswith('/help'):
 			await botHelp(bot,msg)
+		elif msg['text'].startswith('/random'):
+			await trueInteger(bot,msg)
 	except KeyError as e:
 		pprint(e)
 

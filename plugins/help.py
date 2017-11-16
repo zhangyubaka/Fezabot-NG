@@ -1,6 +1,6 @@
 async def botHelp(bot,msg):
 	await bot.sendChatAction(msg['chat']['id'], 'typing')
-	await bot.setMessage(msg['chat']['id'],
+	await bot.sendMessage(msg['chat']['id'],
 		"""
 		This is Fezabot-NG.
 		The owner is porting all feature currently.

@@ -12,5 +12,5 @@ async def trueInteger(bot,msg):
 			async with session.get('https://www.random.org/integers',params={'min':mmin,'max':mmax,'base':10,'col':1,'num':mnum,'rnd':'new','format':'plain'}) as resp:
 				await bot.setMessage(msg['chat']['id'],resp.text)
 	except:
-		await bot.setMessage(msg['chat']['id'],"Request failed.")
+		await bot.sendMessage(msg['chat']['id'],"Request failed.")
 
