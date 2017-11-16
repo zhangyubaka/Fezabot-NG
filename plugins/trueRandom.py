@@ -8,9 +8,9 @@ async def trueInteger(bot,msg):
 	mmin = msg['text'].split()[-2]
 	mnum = msg['text'].split()[-3]
 	try:
-		async with aiohttp.ClientSession() as session:
-			async with session.get('https://www.random.org/integers',params={'min':mmin,'max':mmax,'base':10,'col':1,'num':mnum,'rnd':'new','format':'plain'}) as resp:
-				await bot.setMessage(msg['chat']['id'],resp.text())
+		async with aiohttp.ClientSession() as session: # Client init
+			async with session.get('https://www.random.org/integers',params={'min':mmin,'max':mmax,'base':10,'col':1,'num':mnum,'rnd':'new','format':'plain'}) as resp: # Get response from server
+				await bot.sendMessage(msg['chat']['id'],resp.text()) 
 	except:
 		await bot.sendMessage(msg['chat']['id'],"Request failed.")
 
