@@ -10,7 +10,7 @@ async def trueInteger(bot,msg):
 	try:
 		async with aiohttp.ClientSession() as session:
 			async with session.get('https://www.random.org/integers',params={'min':mmin,'max':mmax,'base':10,'col':1,'num':mnum,'rnd':'new','format':'plain'}) as resp:
-				await bot.setMessage(msg['chat']['id'],resp.text)
+				await bot.setMessage(msg['chat']['id'],resp.text())
 	except:
 		await bot.sendMessage(msg['chat']['id'],"Request failed.")
 
