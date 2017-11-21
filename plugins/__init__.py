@@ -1,2 +1,2 @@
-__all__ = ["contributions", "tts", "zici"]
+__all__ = ["contributions", "tts", "zici","trueRandom","dns"]
 #This file doesn't have usage for now...
