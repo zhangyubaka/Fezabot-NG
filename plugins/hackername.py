@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+async def hackize(bot,msg):
+	print("GET /hackize")
+	name = msg['text'].split()[-1].lower()
+	intable = 'aseigot'
+	outtable = '4531607'
+	table = str.maketrans(intable,outable)
+	try:
+		await bot.sendMessage(msg['chat']['id'],name.translate(table))
+	except:
+		await bot.sendMessage(msg['chat']['id'],"Request failed.")
