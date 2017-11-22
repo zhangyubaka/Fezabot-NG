@@ -10,4 +10,3 @@ async def sad(bot,msg):
 	file = random.choice(os.listdir(DIR))
 	async with aiofiles.open(file) as f:
 		await bot.sendPhoto(msg['chat']['id'],f ,caption=f.name)
-
