@@ -11,6 +11,7 @@ from plugins.help import botHelp
 from config import TOKEN,PORT,URL
 from plugins.trueRandom import trueInteger
 from plugins.dns import getdns
+from plugins.hackername import hakerize
 
 
 global bot # Dirty hack stuff
@@ -44,6 +45,8 @@ async def handler(msg):
 			await trueInteger(bot,msg)
 		elif msg['text'].startswith('/lookup'):
 			await getdns(bot,msg)
+		elif msg['text'].startswith('/hacker'):
+			await hackerize(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
