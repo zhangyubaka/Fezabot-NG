@@ -1,4 +1,5 @@
 async def botHelp(bot,msg):
+	print('GET /Help')
 	await bot.sendChatAction(msg['chat']['id'], 'typing')
 	await bot.sendMessage(msg['chat']['id'],
 		"""

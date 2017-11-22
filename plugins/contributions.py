@@ -4,7 +4,7 @@ import aiofiles
 
 global bot
 async def getContribution(bot,msg):
-    print('Get /Contributions')
+    print('GET /Contributions')
     # Use 'chat' instead of 'from' to avoid sending to user instead of group.
     await bot.sendChatAction(msg['chat']['id'], 'upload_photo')
     # Get the SVG file
