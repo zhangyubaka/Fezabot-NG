@@ -1,3 +1,4 @@
+__author__ = "Feather Zhang"
 import asyncio
 from aiohttp import web
 import telepot
@@ -12,6 +13,8 @@ from config import TOKEN,PORT,URL
 from plugins.trueRandom import trueInteger
 from plugins.dns import getdns
 from plugins.hackername import hakerize
+from plugins.sadchildren import sad
+from plugins.wttr import getWttr
 
 
 global bot # Dirty hack stuff
@@ -47,6 +50,10 @@ async def handler(msg):
 			await getdns(bot,msg)
 		elif msg['text'].startswith('/hacker'):
 			await hackerize(bot,msg)
+		elif msg['text'].startswith('/sad'):
+			await sad(bot,msg)
+		elif msg['text'].startswith('/wttr'):
+			await getWttr(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
