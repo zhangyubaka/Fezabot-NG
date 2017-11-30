@@ -15,6 +15,7 @@ from plugins.dns import getdns
 from plugins.hackername import hakerize
 from plugins.sadchildren import sad
 from plugins.wttr import getWttr
+from plugins.urldecode import urldecode
 
 
 global bot # Dirty hack stuff
@@ -54,6 +55,8 @@ async def handler(msg):
 			await sad(bot,msg)
 		elif msg['text'].startswith('/wttr'):
 			await getWttr(bot,msg)
+		elif msg['text'].startswith('/urldecode'):
+			await urldecode(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
