@@ -31,7 +31,7 @@ async def init(app, bot): # Copy/Pasting code from telepot examples
     await bot.setWebhook(URL)
 
 
-async def handler(msg):    # I may have to refactor this function, this is way too ugly.
+async def handler(msg):    # I may have to refactor this function, this is way too ugly. I just want a case-switch.
 	pprint(type(msg))
 	pprint(msg)
 	try: # Handle the commands
