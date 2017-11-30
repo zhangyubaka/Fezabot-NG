@@ -16,9 +16,7 @@ from plugins.hackername import hakerize
 from plugins.sadchildren import sad
 from plugins.wttr import getWttr
 from plugins.urldecode import urldecode
-
-
-global bot # Dirty hack stuff
+from plugins.ocr import ocr
 
 
 async def feeder(request): # Copy/Pasting code from telepot examples
@@ -33,7 +31,7 @@ async def init(app, bot): # Copy/Pasting code from telepot examples
     await bot.setWebhook(URL)
 
 
-async def handler(msg):
+async def handler(msg):    # I may have to refactor this function, this is way too ugly.
 	pprint(type(msg))
 	pprint(msg)
 	try: # Handle the commands
@@ -42,7 +40,7 @@ async def handler(msg):
 		elif msg['text'].startswith('/start'):
 			await bot.setMessage(msg['chat']['id'],'This is Feza Bot NG.')
 		elif msg['text'].startswith('/zici'): # I might add this feature later, this is a placeholder for now.
-			pass
+			pass	# Since I hate this NLP stuff
 		elif msg['text'].startswith('/help'):
 			await botHelp(bot,msg)
 		elif msg['text'].startswith('/random'):
@@ -57,6 +55,8 @@ async def handler(msg):
 			await getWttr(bot,msg)
 		elif msg['text'].startswith('/urldecode'):
 			await urldecode(bot,msg)
+		elif msg['text'].startswith('/ocr'):
+			await ocr(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
