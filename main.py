@@ -16,7 +16,8 @@ from plugins.hackername import hackerize
 from plugins.sadchildren import sad
 from plugins.wttr import getWttr
 from plugins.urldecode import urldecode
-from plugins.ocr import ocr
+#from plugins.ocr import ocr
+from plugins.translate import translate
 
 
 async def feeder(request): # Copy/Pasting code from telepot examples
@@ -54,8 +55,11 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 			await getWttr(bot,msg)
 		elif msg['text'].startswith('/urldecode'):
 			await urldecode(bot,msg)
-		elif msg['text'].startswith('/ocr'):
-			await ocr(bot,msg)
+		elif msg['text'].startswith('/ocr'): # Disable OCR due to poor effciency.
+			#await ocr(bot,msg)
+			pass
+		elif msg['text'].startswith('/translate'):
+			await translate(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
