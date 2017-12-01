@@ -12,7 +12,7 @@ from plugins.help import botHelp
 from config import TOKEN,PORT,URL
 from plugins.trueRandom import trueInteger
 from plugins.dns import getdns
-from plugins.hackername import hakerize
+from plugins.hackername import hackerize
 from plugins.sadchildren import sad
 from plugins.wttr import getWttr
 from plugins.urldecode import urldecode
