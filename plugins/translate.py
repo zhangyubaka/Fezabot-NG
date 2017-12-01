@@ -7,6 +7,6 @@ async def translate(bot,msg):
 			source = text[1]
 			dest = text[2]
 			word = text[3]
-			await bot.sendMessage(msg['chat']['id'],vb.translate(word,source_lang=source,dest_lang=dest))
+			await bot.sendMessage(msg['chat']['id'],eval(vb.translate(word,source_lang=source,dest_lang=dest))[0]['text'])
 	except:
-		await bot.sendMessage(msg['chat']['id'],"Syntax: /translate sourceLang destLang words. Eg: /translate en zh car"
+		await bot.sendMessage(msg['chat']['id'],"Syntax: /translate sourceLang destLang words. Eg: /translate en zh car")
