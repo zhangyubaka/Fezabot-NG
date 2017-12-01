@@ -1,6 +1,9 @@
 # Byte-compiled / optimized / DLL files
+tesseract_opencl_profile_devices.dat
 __pycache__/
+kernel-Intel(R)_Core(TM)_i5-4258U_CPU_@_2.40GHz.bin
 *.py[cod]
 *$py.class
 *.png
 config.py
+kernel-Iris.bin
