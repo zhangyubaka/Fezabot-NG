@@ -19,3 +19,9 @@ This is Fezabot New Generation, now featuring Async Function and Webhooks on Tel
 ## What's Next?
 
 It all depends, for a instance, replace Tesseract with something for better image recognition.
+
+## Deployment
+
+```
+pip install aiohttp telepot pprint uvloop aiodns cairosvg vocabulary urllib
+```
