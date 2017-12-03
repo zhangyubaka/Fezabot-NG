@@ -4,3 +4,5 @@
 import aioredis
 
 async def msghandler(msg):
+	pass
+# This serves further purpose on redis cache for individual customization
