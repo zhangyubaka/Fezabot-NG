@@ -1,6 +1,6 @@
 from snownlp import SnowNLP
 
-async def zici(msg,bot):
+async def zici(bot,msg):
 	text = msg['text'].split()
 	text.pop(0)
 	text = ''.join(text)

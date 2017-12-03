@@ -18,6 +18,7 @@ from plugins.wttr import getWttr
 from plugins.urldecode import urldecode
 #from plugins.ocr import ocr
 from plugins.translate import translate
+from plugins.zici import zici
 
 
 async def feeder(request): # Copy/Pasting code from telepot examples
@@ -61,6 +62,8 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 			pass
 		elif msg['text'].startswith('/translate'):
 			await translate(bot,msg)
+		elif msg['text'].startswith('/zici'):
+			await zici(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
