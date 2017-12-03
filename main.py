@@ -34,6 +34,7 @@ async def init(app, bot): # Copy/Pasting code from telepot examples
 
 async def handler(msg):    # I may have to refactor this function, this is way too ugly. I just want a case-switch.
 	pprint(msg)
+	
 	try: # Handle the commands
 		if msg['text'].startswith('/contributions'):
 			await getContribution(bot,msg)
