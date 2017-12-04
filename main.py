@@ -35,14 +35,12 @@ async def init(app, bot): # Copy/Pasting code from telepot examples
 
 async def handler(msg):    # I may have to refactor this function, this is way too ugly. I just want a case-switch.
 	pprint(telepot.flance(msg,long=True))	# Logging info...
-	
+
 	try: # Handle the commands
 		if msg['text'].startswith('/contributions'):
 			await getContribution(bot,msg)
 		elif msg['text'].startswith('/start'):
 			await bot.setMessage(msg['chat']['id'],'This is Feza Bot NG.')
-		elif msg['text'].startswith('/zici'): # I might add this feature later, this is a placeholder for now.
-			pass	# Since I hate this NLP stuff
 		elif msg['text'].startswith('/help'):
 			await botHelp(bot,msg)
 		elif msg['text'].startswith('/random'):
