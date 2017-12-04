@@ -11,4 +11,4 @@ async def zici(bot,msg):
 	elif sentiments < threshold:
 		await bot.sendMessage(msg['chat']['id'],'不好耶。',reply_to_message_id=msg['message_id'])
 	else:
-		await bot.sendMessage(msg['chat']['id'],'喵喵喵？',reply_to_message_id=msg['message_id'])
+		await bot.sendMessage(msg['chat']['id'],'Syntax: /support Statement you want to be determine.',reply_to_message_id=msg['message_id'])

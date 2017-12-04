@@ -62,7 +62,7 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 			pass
 		elif msg['text'].startswith('/translate'):
 			await translate(bot,msg)
-		elif msg['text'].startswith('/zici'):
+		elif msg['text'].startswith('/support'):
 			await zici(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
