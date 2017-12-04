@@ -23,5 +23,5 @@ It all depends, for a instance, replace Tesseract with something for better imag
 ## Deployment
 
 ```
-pip install aiohttp telepot pprint uvloop aiodns cairosvg vocabulary urllib
+pip install aiohttp telepot pprint uvloop aiodns cairosvg vocabulary urllib snownlp aioredis
 ```
