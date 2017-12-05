@@ -9,4 +9,4 @@ async def hackerize(bot,msg):
 	try:
 		await bot.sendMessage(msg['chat']['id'],name.translate(table))
 	except:
-		await bot.sendMessage(msg['chat']['id'],"Request failed.")
+		await bot.sendMessage(msg['chat']['id'],"Syntax: /hackize <String>")

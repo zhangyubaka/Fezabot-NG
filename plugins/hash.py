@@ -12,4 +12,4 @@ async def hash(bot,msg):
 		sha512 = hashlib.sha512(text.encode('utf-8')).hexdigest()
 		await bot.sendMessage(msg['chat']['id'],"md5"+' '+md5 +'\n'+'sha1'+' '+sha1+'\n'+'sha256'+' '+sha256+'\n'+'sha512'+' '+sha512)
 	except:
-		await bot.sendMessage(msg['chat']['id'],"Request failed.")
+		await bot.sendMessage(msg['chat']['id'],"Syntax: /hash <msg to be hash>")
