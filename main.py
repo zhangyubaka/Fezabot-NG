@@ -19,7 +19,7 @@ from plugins.urldecode import urldecode
 #from plugins.ocr import ocr
 from plugins.translate import translate
 from plugins.zici import zici
-
+from plugins.kuaidi import kuaidi
 
 async def feeder(request): # Copy/Pasting code from telepot examples
     data = await request.text()
@@ -62,6 +62,8 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 			await translate(bot,msg)
 		elif msg['text'].startswith('/support'):
 			await zici(bot,msg)
+		elif msg['text'].startswith('/kuaidi'):
+			await kuaidi(bot,msg)
 	except KeyError as e: # It may throw something at me. And I hate it.
 		pprint(e)
 
