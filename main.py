@@ -4,7 +4,6 @@ from aiohttp import web
 import telepot
 import telepot.aio
 from telepot.aio.loop import OrderedWebhook
-import uvloop
 from pprint import pprint
 # Plugins
 from plugins.contributions import getContribution
@@ -19,6 +18,7 @@ from plugins.urldecode import urldecode
 #from plugins.ocr import ocr
 from plugins.translate import translate
 from plugins.zici import zici
+from plugins.hash import ihash
 from plugins.kuaidi import kuaidi
 
 async def feeder(request): # Copy/Pasting code from telepot examples
@@ -58,6 +58,8 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 		elif msg['text'].startswith('/ocr'): # Disable OCR due to poor effciency.
 			#await ocr(bot,msg)
 			pass
+		elif msg['text'].startswith('/hash'):
+			await ihash(bot,msg)
 		elif msg['text'].startswith('/translate'):
 			await translate(bot,msg)
 		elif msg['text'].startswith('/support'):
@@ -68,7 +70,6 @@ async def handler(msg):    # I may have to refactor this function, this is way t
 		pprint(e)
 
 
-asyncio.set_event_loop_policy(uvloop.EventLoopPolicy()) # Using libuv for better performance
 loop = asyncio.get_event_loop() # Get eventloop
 
 app = web.Application(loop=loop)

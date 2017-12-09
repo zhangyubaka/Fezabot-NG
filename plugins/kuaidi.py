@@ -2,6 +2,7 @@
 
 from pprint import pprint
 import json
+import aiohttp
 
 
 async def autocomCode(postid: str) -> str:

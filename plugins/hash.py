@@ -2,7 +2,7 @@
 
 import hashlib
 
-async def hash(bot,msg):
+async def ihash(bot,msg):
 	print('GET /hash')
 	text = msg['text'].split()[-1]
 	try:

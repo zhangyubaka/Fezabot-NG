@@ -1,6 +1,7 @@
 from snownlp import SnowNLP
 
 async def zici(bot,msg):
+	print('GET /zici')
 	try:
 		text = msg['text'].split()
 		text.pop(0)

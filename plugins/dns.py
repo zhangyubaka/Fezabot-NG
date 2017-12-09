@@ -9,4 +9,4 @@ async def getdns(bot,msg):
 			re = await r.query(msg['text'].split()[-2],msg['text'].split()[-1])
 			await bot.sendMessage(msg['chat']['id'],re)
 	except:
-		await bot.sendMessage(msg['chat']['id'],"Syntax: /dns <Hostname>")
+		await bot.sendMessage(msg['chat']['id'],"Syntax: /lookup <Hostname> <Type> ")
